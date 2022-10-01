@@ -109,7 +109,7 @@ insert into trabalhaEm values(46928017, 1, 0.0),
 
 select * from information_schema.table_constraints where constraint_schema = 'companhia';
 
-select * from empregado;
+select * from trabalhaEm;
 
 -- create domain dNum as int check(dNum >= x and dNum <= y); // Domínio de numeros inteiros de x a y.
 -- alter table - drop constraint / alter table - add // Modificar o nome de uma constraint (PK  e FK).
@@ -142,3 +142,83 @@ select nomeDepartamento, localDepartamento from departamento d, localDepartament
 -- Concatenando atributos:
 
 select concat(primeiroNome, ' ', nomeDoMeio, ' ', ultimoNome) as empregado from empregado;
+
+-- Expressões e alias (funções renomeadoras/recuperadoras):
+
+-- 1. INSS:
+
+select primeiroNome, ultimoNome, salario, round(salario*0.011 , 2) as INSS from empregado;
+
+-- 2. Aumento de salário para um cenário específico:
+
+select concat(primeiroNome, ' ', ultimoNome) as nomeCompleto, salario as salarioAntigo, round(salario*1.15,2) as salarioNovo from empregado e, trabalhaEm t, projeto p where e.cpf = t.id and t.numeroProjeto = p.numeroProjeto and p.nomeProjeto = 'Projeto 1';
+
+-- Recuperando mais informações:
+
+select nomeDepartamento, codigoGerente, endereco from departamento d, localdepartamento l, empregado e where d.numeroDepartamento = l.numeroDepartamento and localDepartamento = 'Recife';
+
+-- Operadores especiais (like, between, etc.):
+
+select concat(primeiroNome, ' ', ultimoNome) as nomeCompleto, nomeDepartamento, endereco from empregado e, departamento d where e.codigoDepartamento = d.numeroDepartamento and endereco like '%Al. %';
+select concat(primeiroNome, ' ', ultimoNome) as nomeCompleto, nomeDepartamento, endereco from empregado e, departamento d where salario between 2000 and 3000;
+select * from departamento where nomeDepartamento = 'RH' or nomeDepartamento = 'Pesquisa';
+
+-- Subqueries:
+
+select distinct numeroProjeto from projeto where numeroProjeto in(select distinct numeroProjeto from empregado e, trabalhaEm t where t.id = e.cpf and e.ultimoNome = 'Barreto') or (select distinct numeroProjeto from empregado e, departamento d, projeto p where d.codigoGerente = e.cpf and e.ultimoNome = 'Barreto' and d.numeroDepartamento <> p.numeroProjeto);
+select * from trabalhaEm where(numeroProjeto, horas) in(select numeroProjeto, horas from trabalhaEm where id = 46928017);
+
+-- Unique e exists/not exists:
+
+select concat(primeiroNome, ' ', ultimoNome) as nomeCompleto from empregado e where exists(select * from dependente d where e.cpf = d.id and e.primeiroNome <> d.nomeDependente);
+select concat(primeiroNome, ' ', ultimoNome) as nomeCompleto from empregado e where not exists(select * from dependente d where e.cpf = d.id);
+select concat(primeiroNome, ' ', ultimoNome) as nomeCompleto from empregado e, departamento q where e.cpf = q.codigoGerente and exists(select * from empregado e, dependente d where e.cpf = d.id);
+
+-- Cláusulas de ordenação:
+
+select * from empregado order by salario;
+select distinct nomeDepartamento, concat(primeiroNome, ' ', ultimoNome) as nomeCompleto from departamento d, empregado e, trabalhaEm t, projeto p where d.numeroDepartamento = e.codigoDepartamento and e.cpf = d.codigoGerente and t.numeroProjeto = p.numeroProjeto order by d.nomeDepartamento, e.primeiroNome, e.ultimoNome;
+select distinct nomeDepartamento, concat(primeiroNome, ' ', ultimoNome) as nomeCompleto, nomeProjeto, endereco from departamento d, empregado e, trabalhaEm t, projeto p where d.numeroDepartamento = e.codigoDepartamento and e.cpf = t.id and t.numeroProjeto = p.numeroProjeto order by nomeCompleto desc;
+
+-- Cláusulas de agrupamento:
+
+select count(*) from empregado;
+select count(*) from empregado e, departamento d where e.codigoDepartamento = d.numeroDepartamento and d.nomeDepartamento = 'RH';
+select codigoDepartamento, count(*), round(avg(salario),2) as mediaSalarial from empregado group by codigoDepartamento;
+select p.numeroProjeto, p.nomeProjeto, count(*) from projeto p, trabalhaEm t where p.numeroProjeto = t.numeroProjeto group by p.numeroProjeto, p.nomeProjeto;
+select count(distinct salario) from empregado;
+select sum(salario), max(salario), min(salario), round(avg(salario),2) as mediaSalarial from empregado;
+select p.numeroProjeto, p.nomeProjeto, count(*), round(avg(salario),2) as mediaSalarial from projeto p, trabalhaEm t, empregado e where p.numeroProjeto = t.numeroProjeto and e.cpf = t.id group by p.numeroProjeto, p.nomeProjeto order by avg(salario) desc;
+
+-- Having:
+
+select p.numeroProjeto, p.nomeProjeto, count(*) from projeto p, trabalhaEm t where p.numeroProjeto = t.numeroProjeto group by p.numeroProjeto, p.nomeProjeto having count(*) < 2;
+select codigoDepartamento, count(*) from empregado where salario > 2500 group by codigoDepartamento having count(*) < 2;
+select codigoDepartamento, count(*) from empregado where salario > 2500 and codigoDepartamento in(select codigoDepartamento from empregado group by codigoDepartamento having count(*) < 6) group by codigoDepartamento;
+
+-- Operador CASE:
+
+select concat(primeiroNome, ' ', ultimoNome) as nomeCompleto, salario, codigoDepartamento from empregado;
+update empregado set salario = case when codigoDepartamento = 1 then salario + 500 when codigoDepartamento = 2 then salario + 1000 when codigoDepartamento = 3 then salario + 750 else salario + 0 end;
+
+-- JOINS
+
+select * from empregado join projeto;
+select * from empregado join trabalhaEm on cpf = id;
+select * from empregado join departamento on cpf = codigoGerente;
+select concat(primeiroNome, ' ', ultimoNome) as nomeCompleto, endereco from empregado join departamento on codigoDepartamento = numeroDepartamento where nomeDepartamento = 'RH';
+select nomeDepartamento, dataCriacaoDepartamento, localDepartamento from departamento d join localDepartamento l using(numeroDepartamento) group by localDepartamento order by dataCriacaoDepartamento;
+select * from empregado cross join dependente;
+
+-- JOINS com 3 tabelas:
+
+select cpf, concat(primeiroNome, ' ', ultimoNome) as nomeCompleto, nomeProjeto, salario from empregado e inner join trabalhaEm t on e.cpf = t.id inner join projeto p on t.numeroProjeto = p.numeroProjeto where p.nomeProjeto like 'Projeto%' order by e.salario;
+select concat(primeiroNome, ' ', ultimoNome) as nomeCompleto, localDepartamento from departamento d inner join localDepartamento l using(numeroDepartamento) inner join empregado e on cpf = codigoGerente;
+select q.numeroDepartamento, nomeDepartamento, concat(primeiroNome, ' ', ultimoNome) as nomeCompleto, round(salario*0.1,2) as bonus, round(salario*1.1,2) as salarioAtualizado from departamento q inner join localDepartamento l using(numeroDepartamento) inner join (dependente d inner join empregado e on e.cpf = d.id) on e.cpf = q.codigoGerente group by q.numeroDepartamento having count(*) > 0;
+
+-- OUTER JOIN:
+
+select * from empregado inner join dependente on cpf = id;
+select * from empregado left join dependente on cpf = id;
+select * from empregado left outer join dependente on cpf = id;
+
