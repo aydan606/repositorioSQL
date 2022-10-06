@@ -1,0 +1,7 @@
+C:\workspace\projetosC#\Fundamentos\Fundamentos\bin\Debug\Fundamentos.exe
+C:\workspace\projetosC#\Fundamentos\Fundamentos\bin\Debug\Fundamentos.pdb
+C:\workspace\projetosC#\Fundamentos\Fundamentos\obj\Debug\Fundamentos.csproj.AssemblyReference.cache
+C:\workspace\projetosC#\Fundamentos\Fundamentos\obj\Debug\Fundamentos.csproj.SuggestedBindingRedirects.cache
+C:\workspace\projetosC#\Fundamentos\Fundamentos\obj\Debug\Fundamentos.csproj.CoreCompileInputs.cache
+C:\workspace\projetosC#\Fundamentos\Fundamentos\obj\Debug\Fundamentos.exe
+C:\workspace\projetosC#\Fundamentos\Fundamentos\obj\Debug\Fundamentos.pdb
