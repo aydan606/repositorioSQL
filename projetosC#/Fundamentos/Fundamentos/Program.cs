@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Linq;
+using System.Management.Instrumentation;
 using System.Net.Mime;
 using System.Net.NetworkInformation;
 using Fundamentos.models;
@@ -286,3 +289,142 @@ do
 }
 while (aux != "4");
 */
+
+
+/*
+// Arrays com for e foreach
+int[] array = new int[3];
+
+array[0] = 72;
+array[1] = 4;
+array[2] = -21;
+
+for (int i = 0; i < array.Length; i++)
+{
+    Console.WriteLine($"{i + 1}º número do array = {array[i]}");
+}
+
+Console.WriteLine("\n");
+
+int aux = 0;
+foreach (int x in array)
+{
+    Console.WriteLine($"{aux + 1}º número do array = {x}");
+    aux++;
+}
+
+// Redimensionando arrays
+
+Array.Resize(ref array, array.Length * 3);
+
+// Copiando arrays
+
+int[] arrayTriplicado = new int[array.Length * 3];
+Array.Copy(array, arrayTriplicado, array.Length);
+*/
+
+
+/*
+// Trabalhando com listas usando for e foreach:
+List<string> listaStrings = new List<string>();
+
+listaStrings.Add("BA");
+listaStrings.Add("PE");
+listaStrings.Add("RN");
+
+for (int i = 0; i < listaStrings.Count; i++)
+{
+    Console.WriteLine($"{listaStrings[i]}");
+}
+
+int aux = 0;
+foreach (string j in listaStrings)
+{
+    Console.WriteLine($"{j}");
+    aux++;
+}
+*/
+
+
+/*
+void calculo(int x, int y, int z)
+{
+    Console.WriteLine($"Produto: {x} * {y} * {z} = {x*y*z}");
+    Console.WriteLine($"Soma: {x} + {y} + {z} = {x+y+z}");
+    Console.WriteLine($"Diferença do produto com a soma: {(x*y*z)-(x+y+z)}");
+}
+
+Console.WriteLine("Insira os 3 números para o cálculo: \n");
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+int c = Convert.ToInt32(Console.ReadLine());
+
+calculo(a, b, c);
+*/
+
+
+/*
+// Diferença entre o produto e a soma de todos os dígitos de um número inteiro:
+string a = Console.ReadLine();
+char[] array;
+
+array = a.ToCharArray(0, a.Length);
+int[] arrINT = array.Select(j => j - '0').ToArray();
+int aux1 = 1;
+int aux2 = 0;
+
+for (int i = 0; i < array.Length; i++)
+{
+    aux1 *= arrINT[i];
+    aux2 += arrINT[i];
+}
+
+Console.WriteLine($"O resultado esperado é de {aux1 - aux2}");
+*/
+
+
+/*
+long a = Convert.ToInt64(Console.ReadLine());
+long b = Convert.ToInt64(Console.ReadLine());
+
+if (a % 10 == b % 10 && (a/10)%10 == (b/10)%10)
+{
+    Console.WriteLine("encaixa");
+}
+else
+{
+    Console.WriteLine("nao encaixa");
+}
+*/
+
+/*
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+        
+int c = a%10;
+int d = b%10;
+int e = Convert.ToInt32(Math.Floor((decimal)(a/10))%10);
+int f = Convert.ToInt32(Math.Floor((decimal)(a/10))%10);
+
+if (c == d && e == f) 
+{
+    Console.WriteLine("encaixa");
+}
+    else
+    {
+    Console.WriteLine("nao encaixa");
+    }
+*/
+
+int n = Convert.ToInt32(Console.ReadLine());
+int count = 0;
+ 
+for (int i = 1; i <= n; i++) {
+    if (n % i == 0) {
+        count++;
+    }
+    if (count > 3) {
+        break;
+    }
+}
+Console.WriteLine(count == 3);
