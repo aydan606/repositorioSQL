@@ -4,8 +4,8 @@ namespace Fundamentos.models
 {
     public class Pessoa
     {
-        public string Nome { get; set; }
-        public int Idade { get; set; }
+        private string Nome { get; set; }
+        private int Idade { get; set; }
 
         public void Apresentar()
         {

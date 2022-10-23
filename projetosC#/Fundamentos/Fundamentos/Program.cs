@@ -416,6 +416,8 @@ if (c == d && e == f)
     }
 */
 
+
+/*
 int n = Convert.ToInt32(Console.ReadLine());
 int count = 0;
  
@@ -428,3 +430,4 @@ for (int i = 1; i <= n; i++) {
     }
 }
 Console.WriteLine(count == 3);
+*/
