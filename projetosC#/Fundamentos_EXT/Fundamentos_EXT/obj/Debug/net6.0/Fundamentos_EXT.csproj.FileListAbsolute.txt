@@ -1,0 +1,17 @@
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\bin\Debug\net6.0\Fundamentos_EXT.exe
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\bin\Debug\net6.0\Fundamentos_EXT.deps.json
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\bin\Debug\net6.0\Fundamentos_EXT.runtimeconfig.json
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\bin\Debug\net6.0\Fundamentos_EXT.dll
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\bin\Debug\net6.0\Fundamentos_EXT.pdb
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\obj\Debug\net6.0\Fundamentos_EXT.csproj.AssemblyReference.cache
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\obj\Debug\net6.0\Fundamentos_EXT.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\obj\Debug\net6.0\Fundamentos_EXT.AssemblyInfoInputs.cache
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\obj\Debug\net6.0\Fundamentos_EXT.AssemblyInfo.cs
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\obj\Debug\net6.0\Fundamentos_EXT.csproj.CoreCompileInputs.cache
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\obj\Debug\net6.0\Fundamentos_EXT.csproj.CopyComplete
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\obj\Debug\net6.0\Fundamentos_EXT.dll
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\obj\Debug\net6.0\refint\Fundamentos_EXT.dll
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\obj\Debug\net6.0\Fundamentos_EXT.pdb
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\obj\Debug\net6.0\Fundamentos_EXT.genruntimeconfig.cache
+C:\workspace\projetosC#\Fundamentos_EXT\Fundamentos_EXT\obj\Debug\net6.0\ref\Fundamentos_EXT.dll
