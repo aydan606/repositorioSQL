@@ -1,0 +1,15 @@
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\bin\Debug\net6.0\Fundamentos_TESTE.exe
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\bin\Debug\net6.0\Fundamentos_TESTE.deps.json
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\bin\Debug\net6.0\Fundamentos_TESTE.runtimeconfig.json
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\bin\Debug\net6.0\Fundamentos_TESTE.dll
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\bin\Debug\net6.0\Fundamentos_TESTE.pdb
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\obj\Debug\net6.0\Fundamentos_TESTE.csproj.AssemblyReference.cache
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\obj\Debug\net6.0\Fundamentos_TESTE.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\obj\Debug\net6.0\Fundamentos_TESTE.AssemblyInfoInputs.cache
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\obj\Debug\net6.0\Fundamentos_TESTE.AssemblyInfo.cs
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\obj\Debug\net6.0\Fundamentos_TESTE.csproj.CoreCompileInputs.cache
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\obj\Debug\net6.0\Fundamentos_TESTE.dll
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\obj\Debug\net6.0\refint\Fundamentos_TESTE.dll
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\obj\Debug\net6.0\Fundamentos_TESTE.pdb
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\obj\Debug\net6.0\Fundamentos_TESTE.genruntimeconfig.cache
+C:\workspace\projetosC#\Fundamentos_TESTE\Fundamentos_TESTE\obj\Debug\net6.0\ref\Fundamentos_TESTE.dll
